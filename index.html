@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crash Stake Bot</title>
+    <meta name="description" content="Crash Stake Bot — AI Crash Predictor with real-time accuracy. Watch demo and join Telegram." />
+    <meta property="og:title" content="Crash Stake Bot" />
+    <meta property="og:description" content="See Crash Stake Bot in action and maximize your profits." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://dummyimage.com/1200x630/111827/ffffff&text=Crash+Stake+Bot" />
+    <meta property="og:url" content="https://example.com" />
+    <link rel="icon" href="soska2.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                500: '#a855f7', 600: '#9333ea', 700: '#7e22ce'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body { background: radial-gradient(circle at 30% 20%, #1a0b2e 0%, #0a0517 80%); color: #fff; }
+      .fade-in { animation: fade 0.8s ease-out both; }
+      @keyframes fade { from {opacity:0; transform: translateY(8px)} to {opacity:1; transform:none} }
+      .glow { box-shadow: 0 0 30px rgba(168,85,247,0.5); }
+    </style>
+  </head>
+  <body class="text-white antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 backdrop-blur bg-black/40 border-b border-white/10">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src="soska2.png" alt="Crash Stake Bot" class="w-9 h-9 rounded-full" />
+          <span class="font-bold text-lg tracking-tight">Crash Stake Bot</span>
+        </div>
+        <a href="https://t.me/crashstake777" target="_blank" rel="noopener" class="rounded-xl bg-gradient-to-r from-primary-600 to-pink-500 px-5 py-2 font-semibold text-white hover:opacity-90 transition">Get Bot in Telegram</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-24">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+        <div class="fade-in">
+          <span class="inline-block bg-green-600/20 text-green-400 text-xs font-semibold px-3 py-1 rounded-full mb-3">100% Working</span>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Advanced Neural<br />AI Crash Predictor</h1>
+          <p class="mt-4 text-slate-300 text-lg max-w-lg">Our advanced neural network analyzes thousands of crash patterns in real-time to predict the next X multiplier with unprecedented accuracy. Proven results with 100% success rate and money-back guarantee!</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="https://t.me/crashstake777" target="_blank" rel="noopener" class="rounded-xl bg-gradient-to-r from-primary-600 to-pink-500 px-5 py-3 font-semibold text-white glow">Get Bot Now in Telegram</a>
+            <a href="#demo" class="rounded-xl border border-white/20 px-5 py-3 font-semibold text-white/80 hover:bg-white/5 transition flex items-center gap-2"><span>▶</span>Watch Demo</a>
+          </div>
+        </div>
+
+        <div class="fade-in md:delay-150">
+          <div class="relative aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-lg">
+            <video src="1103.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-24 bg-black/50 border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Watch How It Works</h2>
+        <p class="text-slate-300 mb-10 max-w-2xl mx-auto">See Crash Stake Bot in action and learn how to maximize your profits. The demo shows real AI-driven predictions and crash patterns analysis.</p>
+        <div class="relative aspect-video rounded-3xl overflow-hidden border border-white/10 max-w-3xl mx-auto">
+          <video src="1103.mp4" controls autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gradient-to-b from-primary-900/20 to-black border-t border-white/10 text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold">Ready to Try?</h2>
+      <p class="mt-3 text-slate-300">Join the Telegram bot now and start testing Crash Stake Bot for free.</p>
+      <a href="https://t.me/crashstake777" target="_blank" rel="noopener" class="mt-6 inline-block rounded-2xl bg-gradient-to-r from-primary-600 to-pink-500 px-8 py-3 font-semibold text-white hover:opacity-90 transition">Open in Telegram</a>
+    </section>
+
+    <footer class="py-10 text-center text-sm text-slate-400 border-t border-white/10">
+      <p>© <span id="year"></span> Crash Stake Bot. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
