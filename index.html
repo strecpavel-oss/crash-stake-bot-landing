@@ -37,18 +37,12 @@
         from { opacity: 0.7; transform: translateX(-50%) scale(1); }
         to { opacity: 1; transform: translateX(-50%) scale(1.2); }
       }
-      .orbit {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform-origin: center;
-      }
+      .orbit { position: absolute; top: 50%; left: 50%; transform-origin: center; }
       .orbit span {
         position: absolute;
         display: inline-block;
         background: linear-gradient(135deg, #ff00cc, #a855f7);
-        color: white;
-        padding: 5px 10px;
+        color: white; padding: 5px 10px;
         border-radius: 9999px;
         font-weight: 600;
         font-size: 0.9rem;
@@ -57,41 +51,61 @@
       .orbit1 { animation: orbit 6s linear infinite; }
       .orbit2 { animation: orbit 9s linear infinite reverse; }
       .orbit3 { animation: orbit 12s linear infinite; }
-      @keyframes orbit {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
+      @keyframes orbit { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+      /* Fade animations */
+      .fade { animation: fadeIn 1s ease-in-out both; }
+      @keyframes fadeIn { from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:none;} }
+
+      /* Language dropdown */
+      .lang-btn { cursor:pointer; background:#111827; border:1px solid rgba(255,255,255,0.2); padding:6px 12px; border-radius:8px; color:white; font-size:14px; }
+      .lang-menu { display:none; position:absolute; right:0; background:#1f2937; border-radius:8px; overflow:hidden; box-shadow:0 0 10px rgba(0,0,0,0.4); }
+      .lang-menu.active { display:block; }
+      .lang-menu button { display:block; width:100%; text-align:left; padding:8px 16px; border:none; background:none; color:white; font-size:14px; }
+      .lang-menu button:hover { background:#374151; }
     </style>
   </head>
   <body class="antialiased">
     <!-- Header -->
     <header class="sticky top-0 z-50 backdrop-blur bg-black/40 border-b border-white/10">
-      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between relative">
         <div class="flex items-center gap-3">
           <img src="soska2.png" alt="Crash Stake Bot" class="w-9 h-9 rounded-full" />
           <span class="font-bold text-lg tracking-tight">Crash Stake Bot</span>
         </div>
-        <a href="https://t.me/crashstake777" target="_blank" rel="noopener" class="rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-5 py-2 font-semibold text-white hover:opacity-90 transition">Get Bot in Telegram</a>
+
+        <div class="flex items-center gap-3">
+          <div class="relative">
+            <div class="lang-btn" id="lang-toggle">🌐 English ▾</div>
+            <div class="lang-menu" id="lang-menu">
+              <button data-lang="en">English</button>
+              <button data-lang="de">Deutsch</button>
+              <button data-lang="fr">Français</button>
+              <button data-lang="es">Español</button>
+              <button data-lang="it">Italiano</button>
+            </div>
+          </div>
+          <a href="https://t.me/crashstake777" target="_blank" rel="noopener" class="rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-5 py-2 font-semibold text-white hover:opacity-90 transition">Get Bot in Telegram</a>
+        </div>
       </div>
     </header>
 
     <!-- Hero Section -->
     <section class="relative overflow-hidden py-24">
       <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <span class="inline-block bg-green-600/20 text-green-400 text-xs font-semibold px-3 py-1 rounded-full mb-3">100% Working</span>
-          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Advanced Neural<br />AI Crash Predictor</h1>
-          <p class="mt-4 text-slate-300 text-lg max-w-lg">
-            Our advanced neural network analyzes thousands of crash patterns in real-time to predict the next X multiplier with unprecedented accuracy.
-            Proven results with 100% success rate and money-back guarantee!
+        <div class="fade">
+          <span class="inline-block bg-green-600/20 text-green-400 text-xs font-semibold px-3 py-1 rounded-full mb-3 trans" data-key="working">100% Working</span>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight trans" data-key="title">Advanced Neural<br />AI Crash Predictor</h1>
+          <p class="mt-4 text-slate-300 text-lg max-w-lg trans" data-key="desc">
+            Our advanced neural network analyzes thousands of crash patterns in real-time to predict the next X multiplier with unprecedented accuracy. Proven results with 100% success rate and money-back guarantee!
           </p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="https://t.me/crashstake777" target="_blank" rel="noopener" class="rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-5 py-3 font-semibold text-white shadow-lg hover:opacity-90 transition">Get Bot Now in Telegram</a>
-            <a href="#demo" class="rounded-xl border border-white/20 px-5 py-3 font-semibold text-white/80 hover:bg-white/5 transition flex items-center gap-2"><span>▶</span>Watch Demo</a>
+            <a href="https://t.me/crashstake777" target="_blank" rel="noopener" class="rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-5 py-3 font-semibold text-white shadow-lg hover:opacity-90 transition trans" data-key="btn1">Get Bot Now in Telegram</a>
+            <a href="#demo" class="rounded-xl border border-white/20 px-5 py-3 font-semibold text-white/80 hover:bg-white/5 transition flex items-center gap-2 trans" data-key="btn2"><span>▶</span> Watch Demo</a>
           </div>
         </div>
 
-        <!-- Animated Rocket -->
+        <!-- Rocket Animation -->
         <div class="relative h-[380px] md:h-[420px] flex items-center justify-center">
           <div class="relative float">
             <img src="soska2.png" alt="Rocket" class="w-28 md:w-32 relative z-10" />
@@ -104,11 +118,51 @@
       </div>
     </section>
 
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 border-t border-white/10 bg-black/40">
+      <div class="max-w-6xl mx-auto px-4 text-center fade">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-6 trans" data-key="demo_title">Watch How It Works</h2>
+        <p class="text-slate-300 mb-10 trans" data-key="demo_sub">See Crash Stake Bot in action and learn how to maximize your profits.</p>
+        <div class="relative aspect-video rounded-3xl overflow-hidden border border-white/10 max-w-3xl mx-auto">
+          <video src="1103.mp4" controls autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 border-t border-white/10 bg-gradient-to-b from-slate-950 to-slate-900 fade">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-6 trans" data-key="how_title">How Neural Prediction Works</h2>
+        <p class="text-slate-300 mb-10 trans" data-key="how_sub">
+          Our AI analyzes crash game patterns using advanced machine learning to predict multipliers before they happen.
+        </p>
+
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+            <h3 class="font-semibold text-lg mb-2 trans" data-key="card1t">Real-Time Pattern Analysis</h3>
+            <p class="text-slate-300 trans" data-key="card1d">Neural network processes thousands of crash rounds per second, identifying hidden patterns and trends that humans can't detect.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+            <h3 class="font-semibold text-lg mb-2 trans" data-key="card2t">Historical Data Learning</h3>
+            <p class="text-slate-300 trans" data-key="card2d">AI trained on millions of crash game rounds to understand probability distributions and predict optimal cash-out points.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+            <h3 class="font-semibold text-lg mb-2 trans" data-key="card3t">Smart Multiplier Prediction</h3>
+            <p class="text-slate-300 trans" data-key="card3d">Advanced algorithms calculate the probability of each X multiplier, giving you precise predictions for 1.5x, 2x, 5x, 10x and beyond.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+            <h3 class="font-semibold text-lg mb-2 trans" data-key="card4t">Adaptive Strategy</h3>
+            <p class="text-slate-300 trans" data-key="card4d">Bot automatically adjusts betting strategy based on current game conditions and your balance for maximum profit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
-    <section class="py-24 bg-gradient-to-b from-purple-900/20 to-black border-t border-white/10 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Ready to Try?</h2>
-      <p class="mt-3 text-slate-300">Join the Telegram bot now and start testing Crash Stake Bot for free.</p>
-      <a href="https://t.me/crashstake777" target="_blank" rel="noopener" class="mt-6 inline-block rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-3 font-semibold text-white hover:opacity-90 transition">Open in Telegram</a>
+    <section class="py-24 bg-gradient-to-b from-purple-900/20 to-black border-t border-white/10 text-center fade">
+      <h2 class="text-3xl md:text-4xl font-extrabold trans" data-key="cta_title">Ready to Try?</h2>
+      <p class="mt-3 text-slate-300 trans" data-key="cta_text">Join the Telegram bot now and start testing Crash Stake Bot for free.</p>
+      <a href="https://t.me/crashstake777" target="_blank" rel="noopener" class="mt-6 inline-block rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-3 font-semibold text-white hover:opacity-90 transition trans" data-key="cta_btn">Open in Telegram</a>
     </section>
 
     <footer class="py-10 text-center text-sm text-slate-400 border-t border-white/10">
@@ -117,6 +171,30 @@
 
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Language Switcher
+      const langToggle = document.getElementById('lang-toggle');
+      const langMenu = document.getElementById('lang-menu');
+      langToggle.addEventListener('click', () => langMenu.classList.toggle('active'));
+
+      const translations = {
+        de: { title: 'Erweiterter Neuraler KI-Crash-Prädiktor', desc: 'Unser neuronales Netzwerk analysiert Tausende von Mustern ...', btn1: 'Bot jetzt in Telegram holen', btn2: 'Demo ansehen', demo_title: 'Sieh, wie es funktioniert', demo_sub: 'Sieh Crash Stake Bot in Aktion...', how_title: 'Wie die neuronale Vorhersage funktioniert', how_sub: 'Unsere KI analysiert...', card1t: 'Echtzeitmusteranalyse', card2t: 'Historisches Lernen', card3t: 'Intelligente Multiplikatorvorhersage', card4t: 'Adaptive Strategie', cta_title: 'Bereit zum Testen?', cta_text: 'Teste Crash Stake Bot kostenlos.', cta_btn: 'In Telegram öffnen' },
+        fr: { title: 'Prédicteur de crash IA avancé', desc: 'Notre réseau neuronal analyse...', btn1: 'Obtenir le bot sur Telegram', btn2: 'Regarder la démo', demo_title: 'Regardez comment ça marche', demo_sub: 'Voyez Crash Stake Bot en action...', how_title: 'Comment fonctionne la prédiction neuronale', how_sub: 'Notre IA analyse...', card1t: 'Analyse en temps réel', card2t: 'Apprentissage des données historiques', card3t: 'Prédiction intelligente du multiplicateur', card4t: 'Stratégie adaptative', cta_title: 'Prêt à essayer?', cta_text: 'Rejoignez le bot Telegram maintenant.', cta_btn: 'Ouvrir dans Telegram' },
+        es: { title: 'Predicción de crash con IA avanzada', desc: 'Nuestra red neuronal analiza...', btn1: 'Obtener bot en Telegram', btn2: 'Ver demo', demo_title: 'Mira cómo funciona', demo_sub: 'Mira Crash Stake Bot en acción...', how_title: 'Cómo funciona la predicción neuronal', how_sub: 'Nuestra IA analiza...', card1t: 'Análisis en tiempo real', card2t: 'Aprendizaje histórico', card3t: 'Predicción inteligente de multiplicadores', card4t: 'Estrategia adaptativa', cta_title: '¿Listo para probar?', cta_text: 'Únete ahora al bot de Telegram.', cta_btn: 'Abrir en Telegram' },
+        it: { title: 'Predittore di crash IA avanzato', desc: 'La nostra rete neurale analizza...', btn1: 'Ottieni il bot su Telegram', btn2: 'Guarda la demo', demo_title: 'Guarda come funziona', demo_sub: 'Guarda Crash Stake Bot in azione...', how_title: 'Come funziona la previsione neurale', how_sub: 'La nostra IA analizza...', card1t: 'Analisi in tempo reale', card2t: 'Apprendimento dei dati storici', card3t: 'Previsione intelligente del moltiplicatore', card4t: 'Strategia adattiva', cta_title: 'Pronto a provare?', cta_text: 'Unisciti ora al bot Telegram.', cta_btn: 'Apri in Telegram' }
+      };
+
+      langMenu.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.dataset.lang;
+          langToggle.textContent = btn.textContent + ' ▾';
+          langMenu.classList.remove('active');
+          document.querySelectorAll('.trans').forEach(el => {
+            const key = el.dataset.key;
+            if (translations[lang] && translations[lang][key]) el.textContent = translations[lang][key];
+          });
+        });
+      });
     </script>
   </body>
 </html>
